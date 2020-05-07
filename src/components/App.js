@@ -3,6 +3,7 @@ import AddTask from "./AddTask";
 import TaskList from "./TaskList";
 
 class App extends Component {
+
   state = {
     tasks: [
       {
@@ -78,7 +79,7 @@ class App extends Component {
       },
     ],
   };
-
+  counter = this.state.tasks.length;
   deleteTask = (id) => {
     let tasks = [...this.state.tasks];
     tasks = tasks.filter((task) => task.id !== id);
@@ -98,19 +99,40 @@ class App extends Component {
     this.setState({
       tasks
     })
-
   };
 
+  addTask = (text, date, important) => {
+    console.log("dodany obiekt");
+
+    const task = {
+      id: this.counter,
+      text,
+      date,
+      important,
+      active: true,
+      finishDate: null,
+    }
+    this.counter++
+    this.setState({
+      tasks: [...this.state.tasks, task]
+    })
+
+    console.log(task, this.counter);
+    return true;
+  }
 
   render() {
     return (
       <div>
         TO DO LIST
-        <AddTask />
+        <AddTask
+        add={this.addTask}
+        />
         <TaskList
           tasks={this.state.tasks}
           delete={this.deleteTask}
           change={this.changeTaskStatus}
+          
         />
       </div>
     );

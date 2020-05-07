@@ -2,16 +2,47 @@ import React, { Component } from "react";
 
 class AddTask extends Component {
   minDate = new Date().toISOString().slice(0, 10);
+
   state = {
     text: "",
     checked: false,
     date: this.minDate,
   };
+
+  handleCheckbox = (e) => {
+    this.setState({
+      checked: e.target.checked,
+    });
+  };
+
+  handleText = (e) => {
+    this.setState({
+      text: e.target.value,
+    });
+  };
+
   handleDate = (e) => {
-      this.setState({
-          date: e.target.value
-      })
-  }
+    this.setState({
+      date: e.target.value,
+    });
+  };
+
+  handleClick = () => {
+    const { text, checked, date } = this.state;
+    if (text.length > 2) {
+      const add = this.props.add(text, date, checked);
+      if (add) {
+        this.setState({
+          text: "",
+          checked: false,
+          date: this.minDate,
+        });
+      } else {
+        console.log("Za krótka nazwa");
+      }
+    }
+  };
+
   render() {
     let maxDate = this.minDate.slice(0, 4) * 1 + 1;
     maxDate = maxDate + "-12-31";
@@ -21,8 +52,14 @@ class AddTask extends Component {
           type="text"
           placeholder="dodaj zadanie"
           value={this.state.text}
+          onChange={this.handleText}
         />
-        <input type="checkbox" checked={this.state.checked} id="important" />
+        <input
+          type="checkbox"
+          checked={this.state.checked}
+          id="important"
+          onChange={this.handleCheckbox}
+        />
         <label htmlFor="important">Pirorytet</label>
         <br />
         <label htmlFor="date">Do kiedy zrobić</label>
@@ -33,7 +70,7 @@ class AddTask extends Component {
           max={maxDate}
           onChange={this.handleDate}
         />
-        <button>Dodaj</button>
+        <button onClick={this.handleClick}>Dodaj</button>
       </div>
     );
   }
