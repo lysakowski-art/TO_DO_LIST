@@ -55,3 +55,27 @@
     }
   }
 }
+@media(max-width: 330px){
+    .btnCnt{
+        width:1.5rem;
+        .btnTask {
+            margin: 0 0.5rem 0 0.5rem;
+          }
+    }
+    .active{
+        p{
+            width: 85%;
+        }
+    }    
+    .doneTasks {
+        p{
+        font-size: 0.8rem;
+        display: flex;
+        flex-direction: column;
+        em{
+            font-size: 0.7rem;
+        }
+        }
+        
+    }
+}

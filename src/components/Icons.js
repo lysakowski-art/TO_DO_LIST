@@ -50,7 +50,7 @@ const Icons = () => {
           focusable="false"
           data-prefix="fab"
           data-icon="facebook-square"
-          class="icon svg-inline--fa fa-facebook-square fa-w-14"
+          className="icon svg-inline--fa fa-facebook-square fa-w-14"
           role="img"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 448 512"

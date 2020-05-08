@@ -1,18 +1,18 @@
 @import "./Variables.scss";
-.header {
-  width: 100%;
-  text-align: center;
-  font-family: $titleFont;
-  background-color: $mainColor;
-  .mainTitle {
-    font-weight: bold;
-    font-size: 1.9rem;
-    color: $secondColor;
-    padding-top: 0.7rem;
-  }
-  .subtitle {
-    font-size: 1.1rem;
-    color: $secondColor;
-    padding: 0.7rem;
-  }
+.header{
+    width: 100%;
+    text-align: center;
+    font-family: $titleFont;
+    background-color: $mainColor;
+    .mainTitle{
+        font-weight: bold;
+        font-size: 1.9rem;
+        color: $secondColor;
+        padding-top: 0.7rem;
+    }
+    .subtitle{
+        font-size: 1.1rem;
+        color: $secondColor;
+        padding: 0.7rem;
+    }
 }
