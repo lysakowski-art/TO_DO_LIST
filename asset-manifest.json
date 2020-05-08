@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/TO_DO_LIST/static/css/main.f93314fe.chunk.css",
+    "main.js": "/TO_DO_LIST/static/js/main.0f9f8bc2.chunk.js",
+    "main.js.map": "/TO_DO_LIST/static/js/main.0f9f8bc2.chunk.js.map",
+    "runtime-main.js": "/TO_DO_LIST/static/js/runtime-main.44be4966.js",
+    "runtime-main.js.map": "/TO_DO_LIST/static/js/runtime-main.44be4966.js.map",
+    "static/js/2.df0c689a.chunk.js": "/TO_DO_LIST/static/js/2.df0c689a.chunk.js",
+    "static/js/2.df0c689a.chunk.js.map": "/TO_DO_LIST/static/js/2.df0c689a.chunk.js.map",
+    "index.html": "/TO_DO_LIST/index.html",
+    "precache-manifest.82bf1dbf0fe048f8ef71389ebec33a1e.js": "/TO_DO_LIST/precache-manifest.82bf1dbf0fe048f8ef71389ebec33a1e.js",
+    "service-worker.js": "/TO_DO_LIST/service-worker.js",
+    "static/css/main.f93314fe.chunk.css.map": "/TO_DO_LIST/static/css/main.f93314fe.chunk.css.map",
+    "static/js/2.df0c689a.chunk.js.LICENSE.txt": "/TO_DO_LIST/static/js/2.df0c689a.chunk.js.LICENSE.txt",
+    "static/media/NonOfActiveTasks.scss": "/TO_DO_LIST/static/media/yoda.111d833a.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.44be4966.js",
+    "static/js/2.df0c689a.chunk.js",
+    "static/css/main.f93314fe.chunk.css",
+    "static/js/main.0f9f8bc2.chunk.js"
+  ]
+}
