@@ -1,0 +1,57 @@
+@import "../styles/Variables.scss";
+
+.done,
+.active {
+  width: 100%;
+}
+// .coffee{
+//     color: white;
+//     fill: black;
+// }
+.done {
+  p {
+    display: flex;
+  }
+}
+.task {
+  display: flex;
+  width: 100%;
+  border-bottom: 1px solid lighten($mainColor, 80);
+  margin-bottom: 0.3rem;
+}
+
+.taskContent {
+  width: 90%;
+}
+
+.btnCnt {
+  width: 10%;
+  display: flex;
+  justify-content: flex-end;
+  .btnTask {
+    border: none;
+    background-color: transparent;
+    width: 50%;
+    font-size: 1.2rem;
+  }
+  .doneBtn {
+    color: $mainColor;
+  }
+  .thrashBtn {
+    color: red;
+  }
+}
+.doneTasks {
+  display: flex;
+  .checked {
+    margin-right: 1rem;
+  }
+  p {
+    font-size: 1.1rem;
+    em {
+      font-style: italic;
+      font-size: 0.9rem;
+      align-self: center;
+    }
+  }
+}

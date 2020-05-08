@@ -1,5 +1,7 @@
 import React from "react";
 import Task from "./Task";
+import NonOfActiveTasks from "./NonOfActive";
+import "../styles/TaskList.scss";
 
 const TaskList = (props) => {
   const active = props.tasks.filter((task) => task.active);
@@ -41,18 +43,18 @@ const TaskList = (props) => {
   return (
     <>
       <div className="active">
-        <h1>Lista do zrobienia ({active.length})</h1>
-        {activeTasks.length ? activeTasks : "Nie masz już nic do roboty"}
+        <h2 className="titleTasks">
+          To do <em>({active.length})</em>
+        </h2>
+        {activeTasks.length ? activeTasks : <NonOfActiveTasks />}
       </div>
       <hr />
       <div className="done">
-        <h3>
-          Lista zrobionych <em>({done.length})</em>
-        </h3>
+        <h2 className="titleTasks">
+          Done <em>({done.length})</em>
+        </h2>
         {done.length > 4 && (
-          <span style={{ fontSize: "10px" }}>
-            wyświetlone są tylko 4 ostatnio wykonane zadania
-          </span>
+          <p className="info">You can see only 4 of recent tasks!</p>
         )}
         {doneTasks.slice(0, 4)}
       </div>

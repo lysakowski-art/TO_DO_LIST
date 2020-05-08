@@ -1,79 +1,27 @@
 import React, { Component } from "react";
 import AddTask from "./AddTask";
 import TaskList from "./TaskList";
+import Header from "./Header";
+import Footer from "./Footer";
+import "../styles/Reset.scss";
+import "../styles/App.scss";
 
 class App extends Component {
-
   state = {
     tasks: [
       {
         id: 0,
-        text: "zagrać wreszcie w Wiedzmina 3",
-        date: "2018-02-15",
+        text: "Another example that I decided to leave",
+        date: "2020-05-15",
         important: true,
-        active: true,
-        finishDate: null,
+        active: false,
+        finishDate: "2020-05-10",
       },
       {
         id: 1,
-        text: "odmalować pokój",
-        date: "2018-03-10",
+        text: "Some example that I decided to leave",
+        date: "2020-05-10",
         important: false,
-        active: true,
-        finishDate: null,
-      },
-      {
-        id: 2,
-        text: "nagrać porno",
-        date: "2019-04-11",
-        important: false,
-        active: true,
-        finishDate: null,
-      },{
-        id: 3,
-        text: "umyć tyłek",
-        date: "2019-03-15",
-        important: true,
-        active: true,
-        finishDate: null,
-      },
-      {
-        id: 4,
-        text: "obciąć paznokcie",
-        date: "2018-04-12",
-        important: true,
-        active: true,
-        finishDate: null,
-      },
-      {
-        id: 5,
-        text: "zwąchać interes życia",
-        date: "2020-02-15",
-        important: false,
-        active: true,
-        finishDate: null,
-      },
-      {
-        id: 6,
-        text: "zrobić ciasto",
-        date: "2019-04-25",
-        important: false,
-        active: true,
-        finishDate: null,
-      },
-      {
-        id: 7,
-        text: "pogłaskać pusię",
-        date: "2019-12-30",
-        important: false,
-        active: true,
-        finishDate: null,
-      },
-      {
-        id: 8,
-        text: "NAUCZYĆ SIĘ PROGRAMOWAĆ",
-        date: "2050-11-02",
-        important: true,
         active: true,
         finishDate: null,
       },
@@ -90,20 +38,18 @@ class App extends Component {
 
   changeTaskStatus = (id) => {
     const tasks = Array.from(this.state.tasks);
-    tasks.forEach(task => {
-      if(task.id === id) {
+    tasks.forEach((task) => {
+      if (task.id === id) {
         task.active = false;
         task.finishDate = new Date().getTime();
       }
-    })
+    });
     this.setState({
-      tasks
-    })
+      tasks,
+    });
   };
 
   addTask = (text, date, important) => {
-    console.log("dodany obiekt");
-
     const task = {
       id: this.counter,
       text,
@@ -111,29 +57,29 @@ class App extends Component {
       important,
       active: true,
       finishDate: null,
-    }
-    this.counter++
+    };
+    this.counter++;
     this.setState({
-      tasks: [...this.state.tasks, task]
-    })
+      tasks: [...this.state.tasks, task],
+    });
 
     console.log(task, this.counter);
     return true;
-  }
+  };
 
   render() {
     return (
-      <div>
-        TO DO LIST
-        <AddTask
-        add={this.addTask}
-        />
-        <TaskList
-          tasks={this.state.tasks}
-          delete={this.deleteTask}
-          change={this.changeTaskStatus}
-          
-        />
+      <div className="app">
+        <Header />
+        <div className="cnt">
+          <AddTask add={this.addTask} />
+          <TaskList
+            tasks={this.state.tasks}
+            delete={this.deleteTask}
+            change={this.changeTaskStatus}
+          />
+        </div>
+        <Footer />
       </div>
     );
   }

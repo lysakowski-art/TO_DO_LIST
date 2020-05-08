@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "../styles/AddTask.scss";
 
 class AddTask extends Component {
   minDate = new Date().toISOString().slice(0, 10);
@@ -48,29 +49,40 @@ class AddTask extends Component {
     maxDate = maxDate + "-12-31";
     return (
       <div className="form">
-        <input
-          type="text"
-          placeholder="dodaj zadanie"
-          value={this.state.text}
-          onChange={this.handleText}
-        />
-        <input
-          type="checkbox"
-          checked={this.state.checked}
-          id="important"
-          onChange={this.handleCheckbox}
-        />
-        <label htmlFor="important">Pirorytet</label>
-        <br />
-        <label htmlFor="date">Do kiedy zrobić</label>
-        <input
-          type="date"
-          value={this.state.date}
-          min={this.minDate}
-          max={maxDate}
-          onChange={this.handleDate}
-        />
-        <button onClick={this.handleClick}>Dodaj</button>
+        <div className="column">
+          <div>
+            <input
+              className="addInput"
+              type="text"
+              placeholder="Add task"
+              value={this.state.text}
+              onChange={this.handleText}
+            />
+            <input
+              className="checkbox"
+              type="checkbox"
+              checked={this.state.checked}
+              id="important"
+              onChange={this.handleCheckbox}
+            />
+            <label className="priorrityLabel" htmlFor="important">
+              Pirority
+            </label>
+          </div>
+          <div className="dateCnt">
+            <label htmlFor="date">Choose your deadline</label>
+            <input
+              type="date"
+              value={this.state.date}
+              min={this.minDate}
+              max={maxDate}
+              onChange={this.handleDate}
+            />
+          </div>
+        </div>
+        <button className="primaryBtn" onClick={this.handleClick}>
+          Add
+        </button>
       </div>
     );
   }
