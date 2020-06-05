@@ -71,14 +71,14 @@ class App extends Component {
     return (
       <div className="app">
         <Header />
-        <div className="cnt">
+        <main className="cnt">
           <AddTask add={this.addTask} />
           <TaskList
             tasks={this.state.tasks}
             delete={this.deleteTask}
             change={this.changeTaskStatus}
           />
-        </div>
+        </main>
         <Footer />
       </div>
     );

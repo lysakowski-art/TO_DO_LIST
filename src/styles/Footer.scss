@@ -1,14 +1,14 @@
 @import "./Variables.scss";
 
 .footer {
-  position: absolute;
-  bottom: 0;
+  flex-shrink: 0;
   height: 2rem;
   width: 100%;
   background-color: $mainColor;
   z-index: 10;
   display: flex;
   align-items: center;
+  padding: 0;
   .copyright {
     width: 90%;
     color: $secondColor;
